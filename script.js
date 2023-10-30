@@ -3,7 +3,7 @@ const loading = document.querySelector('.loader')
 const filter = document.getElementById('filter')
 
 
-let limit = 3
+let limit = 7
 let page = 1
 
 //fethcing posts from the API
@@ -33,6 +33,23 @@ async function showPosts () {
 }
 
 //show loader and fetch more posts
+
+function showLoading(){
+    loading.classList.add('show')
+
+    setTimeout(() => {
+        loading.classList.remove('show')
+
+
+        setTimeout(()=>{
+            page ++
+            showPosts() 
+
+        },300)
+    }, 1000)
+
+
+}
 
 
 showPosts()
