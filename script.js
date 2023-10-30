@@ -32,4 +32,16 @@ async function showPosts () {
     })
 }
 
+//show loader and fetch more posts
+
+
 showPosts()
+
+window.addEventListener('scroll', () =>{
+const{ scrollTop, scrollHeight, clientHeight} =
+document.documentElement
+if (scrollTop + clientHeight >= scrollHeight - 5){
+    showLoading()
+}
+
+})
